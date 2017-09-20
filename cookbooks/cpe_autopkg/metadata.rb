@@ -9,3 +9,4 @@ version '0.1.0'
 
 # depends 'cpe_remote'
 depends 'cpe_profiles'
+depends 'mac_os_x'

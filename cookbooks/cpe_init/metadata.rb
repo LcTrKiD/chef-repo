@@ -6,7 +6,7 @@ maintainer_email 'noreply@facebook.com'
 license 'BSD'
 description 'This is the very basic cookbook that starts it all.'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '0.1.0'
+version '0.4.0'
 
 # Multi-platform
 depends 'cpe_user_customizations'
@@ -30,6 +30,7 @@ depends 'cpe_prompt_user'
 depends 'cpe_screensaver'
 depends 'cpe_spotlight'
 depends 'cpe_remote'
+depends 'cpe_applicationaccess'
 
 ## Web Browser API Cookbooks
 depends 'cpe_chrome'

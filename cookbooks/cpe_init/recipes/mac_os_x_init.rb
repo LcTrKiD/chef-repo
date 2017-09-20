@@ -36,6 +36,7 @@ if node.macos?
     'cpe_spotlight',
     'cpe_powermanagement',
     'cpe_preferencepanes',
+    'cpe_applicationaccess',
     # HERE: Coming soon! Will be opensourced at a later date
     # 'cpe_firefox',
     # 'cpe_firewall_config',
