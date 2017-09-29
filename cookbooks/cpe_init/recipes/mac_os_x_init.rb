@@ -18,13 +18,16 @@ run_list = []
 # would like to include
 run_list += [
   'cpe_init::company_init',
+  'cpe_init::remote_files_for_chef',
 ]
 
 # API Cookbooks go last
 if node.macos?
   run_list += [
     # 'cpe_autopkg', # requires 'mac_os_x' community cookbook
+    #'chef-client', #run chef periodically
     'cpe_bluetooth',
+    'cpe_chef',
     'cpe_chrome',
     'cpe_desktop',
     'cpe_hosts',
@@ -37,6 +40,7 @@ if node.macos?
     'cpe_powermanagement',
     'cpe_preferencepanes',
     'cpe_applicationaccess',
+    'cpe_sal_preferences',
     # HERE: Coming soon! Will be opensourced at a later date
     # 'cpe_firefox',
     # 'cpe_firewall_config',

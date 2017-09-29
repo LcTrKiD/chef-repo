@@ -16,6 +16,7 @@ depends 'cpe_utils'
 ### API Cookbooks
 # depends 'cpe_autopkg' # requires 'mac_os_x' community cookbook
 depends 'cpe_bluetooth'
+depends 'cpe_chef'
 depends 'cpe_desktop'
 depends 'cpe_hosts'
 depends 'cpe_launchd'
@@ -31,6 +32,7 @@ depends 'cpe_screensaver'
 depends 'cpe_spotlight'
 depends 'cpe_remote'
 depends 'cpe_applicationaccess'
+depends 'cpe_sal_preferences'
 
 ## Web Browser API Cookbooks
 depends 'cpe_chrome'

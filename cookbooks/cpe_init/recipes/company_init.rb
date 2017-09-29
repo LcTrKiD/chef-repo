@@ -68,7 +68,7 @@ node.default['cpe_munki']['preferences']['ClientIdentifier'] = 'master'
 #Adding Munki path
 node.default['cpe_pathsd'] << '/usr/local/munki'
 #Resolve issue with testing munki server
-node.default['cpe_hosts']['extra_entries']['192.168.1.24'] = ['munki-server.macadmin.ninja']
+#node.default['cpe_hosts']['extra_entries']['192.168.1.24'] = ['munki-server.macadmin.ninja']
 
 # Manage Local Munki Manifest
 managed_installs = [
@@ -79,7 +79,7 @@ managed_installs.each do |item|
 end
 
 #Configure Desktop Wallpaper
-node.default['cpe_desktop']['override-picture-path'] = '/Library/Desktop Pictures/Snow.jpg'
+node.default['cpe_desktop']['override-picture-path'] = '/Library/Desktop Pictures/Sierra.jpg'
 #Tweaking Pref Pane
 node.default['cpe_preferencepanes']['HiddenPreferencePanes'] = [
   'com.apple.preference.displays',
@@ -95,3 +95,22 @@ node.default['cpe_applicationaccess']['lists']['pathBlackList'] = [
   '/Applications/Chess.app',
   '/Applications/Automator.app',
 ]
+
+#Launch Daemon to run chefctl
+
+#node.default['cpe_launchd']['chefctl'] = {
+#  'program_arguments' => ['/usr/local/bin/chefctl.rb'],
+#  'run_at_load' => true,
+#  'start_interval' => 1800,
+#  'time_out' => 600
+#}
+
+node.default['cpe_remote']['base_url'] = 's3-eu-west-1.amazonaws.com/munki-server/dep'
+
+#Run chef-client periodically
+node.default['cpe_chef']['config'] = true
+node.default['cpe_chef']['interval'] = 120
+
+#Configuration for Sal Preferences
+node.default['cpe_sal_preferences']['ServerURL'] = 'http://munki-server.macadmin.ninja:8000'
+node.default['cpe_sal_preferences']['key'] = 'ejc3sq4li4nc2m7rgo9qbvlgp8jsj171x7lhlaj37qe5hx0zrajhsp1gzgequremq6f8oqz60w08e4ff0ys5sckk1b0vwskgdd7dvxvx5uqfy6xkc4fem3672acqveuu'
